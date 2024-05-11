@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "727693847562",
+    "project_id": "liber-maniac",
+    "storage_bucket": "liber-maniac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:727693847562:android:36c036ea4e20f4aae8c3f3",
+        "android_client_info": {
+          "package_name": "com.example.liber_maniac"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtO7DUAX2LED-skOf84H2Ol4Pups8GOj4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
