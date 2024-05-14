@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:liber_maniac/Screens/add_to_cart_screen.dart';
+import 'package:liber_maniac/cart/add_to_cart_screen.dart';
 
 class BookDetailsScreen extends StatelessWidget {
   final String title;

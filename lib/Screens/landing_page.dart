@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:liber_maniac/Screens/book_screen_detail.dart';
-import 'package:liber_maniac/Screens/children_screen.dart';
-import 'package:liber_maniac/Screens/comic_screen.dart';
-import 'package:liber_maniac/Screens/history_screen.dart';
-import 'package:liber_maniac/Screens/horror_screen.dart';
-import 'package:liber_maniac/Screens/mystery_screen.dart';
-import 'package:liber_maniac/Screens/romance_screen.dart';
-import 'package:liber_maniac/Screens/scifi_screen.dart';
-import 'package:liber_maniac/Screens/thriller_screen.dart';
+import 'package:liber_maniac/categories/children_screen.dart';
+import 'package:liber_maniac/categories/comic_screen.dart';
+import 'package:liber_maniac/categories/history_screen.dart';
+import 'package:liber_maniac/categories/horror_screen.dart';
+import 'package:liber_maniac/categories/mystery_screen.dart';
+import 'package:liber_maniac/categories/romance_screen.dart';
+import 'package:liber_maniac/categories/scifi_screen.dart';
+import 'package:liber_maniac/categories/thriller_screen.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});

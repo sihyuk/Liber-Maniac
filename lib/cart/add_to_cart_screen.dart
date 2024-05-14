@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:liber_maniac/Screens/cart_screen.dart';
+import 'package:liber_maniac/cart/cart_provider.dart';
+import 'package:provider/provider.dart';
 
 class AddToCartScreen extends StatefulWidget {
   final String title;
@@ -19,11 +20,12 @@ class AddToCartScreen extends StatefulWidget {
 
 class _AddToCartScreenState extends State<AddToCartScreen> {
   int _quantity = 1;
-
   double get totalPrice => _quantity * widget.price;
 
   @override
   Widget build(BuildContext context) {
+    // Access the CartProvider
+    final cartProvider = Provider.of<CartProvider>(context);
     return Dialog(
       child: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -91,17 +93,26 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CartScreen(
-                      title: widget.title,
-                      imagePath: widget.imagePath,
-                      price: widget.price,
-                      quantity: _quantity,
-                    ),
-                  ),
-                );
+                // Add item to the cartItems list in CartProvider
+                cartProvider.addToCart(CartItem(
+                  title: widget.title,
+                  imagePath: widget.imagePath,
+                  price: widget.price,
+                  quantity: _quantity,
+                ));
+                // Close the dialog
+                Navigator.of(context).pop();
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => CartScreen(
+                //       title: widget.title,
+                //       imagePath: widget.imagePath,
+                //       price: widget.price,
+                //       quantity: _quantity,
+                //     ),
+                //   ),
+                // );
               },
               style: ButtonStyle(
                 backgroundColor: const MaterialStatePropertyAll(

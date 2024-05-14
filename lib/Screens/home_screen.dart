@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:liber_maniac/cart/cart_screen.dart';
 import 'package:liber_maniac/Screens/landing_page.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -18,7 +19,19 @@ class HomeScreen extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: signUserOut,
-              icon: const Icon(Icons.logout, color: Colors.white))
+              icon: const Icon(Icons.logout, color: Colors.white)),
+          IconButton(
+            onPressed: () {
+              // Navigate to the cart screen
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        const CartScreen()), // Replace CartScreen() with your cart screen
+              );
+            },
+            icon: const Icon(Icons.shopping_cart, color: Colors.white),
+          ),
         ],
         title: const Text(
           'Liber Maniac',
