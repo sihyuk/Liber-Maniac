@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:liber_maniac/Screens/categories.dart';
+import 'package:liber_maniac/Screens/library_screen.dart';
 import 'package:liber_maniac/cart/cart_screen.dart';
 import 'package:liber_maniac/Screens/landing_page.dart';
 
@@ -18,9 +20,6 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         actions: [
           IconButton(
-              onPressed: signUserOut,
-              icon: const Icon(Icons.logout, color: Colors.white)),
-          IconButton(
             onPressed: () {
               // Navigate to the cart screen
               Navigator.push(
@@ -32,6 +31,9 @@ class HomeScreen extends StatelessWidget {
             },
             icon: const Icon(Icons.shopping_cart, color: Colors.white),
           ),
+          IconButton(
+              onPressed: signUserOut,
+              icon: const Icon(Icons.logout, color: Colors.white)),
         ],
         title: const Text(
           'Liber Maniac',
@@ -64,21 +66,23 @@ class HomeScreen extends StatelessWidget {
               leading: const Icon(Icons.home),
               title: const Text('Home'),
               onTap: () {
-                // Navigate to home screen or perform any other action
+                Navigator.popAndPushNamed(context, '/home');
               },
             ),
             ListTile(
-              leading: const Icon(Icons.search),
-              title: const Text('Search'),
+              leading: const Icon(Icons.category),
+              title: const Text('Categories'),
               onTap: () {
-                // Navigate to search screen or perform any other action
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CategoriesList()));
               },
             ),
             ListTile(
-              leading: const Icon(Icons.notifications),
-              title: const Text('Notifications'),
+              leading: const Icon(Icons.library_books),
+              title: const Text('Library'),
               onTap: () {
-                // Navigate to notifications screen or perform any other action
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LibraryPage()));
               },
             ),
             ListTile(

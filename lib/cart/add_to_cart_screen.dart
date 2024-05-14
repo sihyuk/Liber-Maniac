@@ -15,6 +15,7 @@ class AddToCartScreen extends StatefulWidget {
   }) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _AddToCartScreenState createState() => _AddToCartScreenState();
 }
 
@@ -102,17 +103,6 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                 ));
                 // Close the dialog
                 Navigator.of(context).pop();
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => CartScreen(
-                //       title: widget.title,
-                //       imagePath: widget.imagePath,
-                //       price: widget.price,
-                //       quantity: _quantity,
-                //     ),
-                //   ),
-                // );
               },
               style: ButtonStyle(
                 backgroundColor: const MaterialStatePropertyAll(
